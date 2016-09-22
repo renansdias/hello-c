@@ -3,7 +3,7 @@ var app = express();
 
 var port = 3456;
 var service = "C";
-var version = "2.0.0";
+var version = "3.0.0";
 
 app.get('/', function(req, res) {
     console.log("Someone is requesting access to version: " + version + " of service " + service);
