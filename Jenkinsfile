@@ -15,5 +15,8 @@ node {
 	sh('sed -i \'s/__VERSION__/\'${HASH}\'/g\' deployment-c.json')
 	
 	sh('kubectl apply -f deployment-c.json --context="aws_k8s" --kubeconfig="/var/lib/jenkins/.kube/config"')
-	sh('kubectl apply -f service-c.json --context="aws_k8s" --kubeconfig="/var/lib/jenkins/.kube/config"')
+	
+	if (serviceName != 'service/service-c') {
+		sh('kubectl apply -f service-c.json --context="aws_k8s" --kubeconfig="/var/lib/jenkins/.kube/config"')
+	}
 }
