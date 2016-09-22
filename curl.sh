@@ -1,7 +1,7 @@
 #!/bin/bash
 
 x=0
-load_balancer_url=a743cbf5d799e11e682650e055176b25-1466253368.us-east-1.elb.amazonaws.com/
+load_balancer_url=$1
 
 while [[ true ]]; do
        	curl $load_balancer_url
